@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Date: 2020-08-03 19:24
  */
 @Configuration
-@MapperScan("cn.dbdj1201.user.dao")
+@MapperScan("cn.dbdj1201.user.mapper")
 @EnableTransactionManagement
 public class MybatisPlusConfig {
     @Bean
