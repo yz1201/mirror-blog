@@ -1,0 +1,33 @@
+server:
+  port: 40923
+
+spring:
+  application:
+    name: service-user
+  # thymeleaf
+
+  thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML5
+    #编码 可不用配置
+    encoding: UTF-8
+    #内容类别,可不用配置
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates/
+    servlet:
+      content-type: text/html
+  resources:
+    static-locations: classpath:/resources/, classpath:/static/ ,classpath:/templates/
+#  devtools:
+#  restart:
+#    poll-interval: 3000ms
+#    quiet-period: 2999ms
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql:///db_mirror?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+
