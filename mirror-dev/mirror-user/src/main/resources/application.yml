@@ -25,10 +25,20 @@ spring:
     username: root
     password: root
     # DataSource Config
-
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/UserMapper.xml
-
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+#shiro redis config
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+dbdj1201:
+  jwt:
+    # 加密秘钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    # token有效时长，7天，单位秒
+    expire: 604800
+    header: Authorization
 
 
 #  datasource:

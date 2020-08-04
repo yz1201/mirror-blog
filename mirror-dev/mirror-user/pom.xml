@@ -80,15 +80,30 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mybatis</groupId>
+                    <artifactId>mybatis-spring</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mybatis</groupId>
+                    <artifactId>mybatis</artifactId>
+                </exclusion>
+            </exclusions>
             <version>3.2.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.crazycake</groupId>
             <artifactId>shiro-redis-spring-boot-starter</artifactId>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.apache.shiro</groupId>-->
+<!--                    <artifactId>shiro-core</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
             <version>3.2.1</version>
         </dependency>
-
 
         <!-- jwt -->
         <dependency>
@@ -96,7 +111,6 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
-
 
         <!--一般通用配置-->
         <dependency>

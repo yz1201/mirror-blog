@@ -43,7 +43,8 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
+        String projectPath = System.getProperty("user.dir") + "/mirror-dev/mirror-user";
+        System.out.println("path-" + projectPath);
         gc.setOutputDir(projectPath + "/src/main/java");
 //        gc.setOutputDir("D:\\test");
         gc.setAuthor("dbdj1201");
