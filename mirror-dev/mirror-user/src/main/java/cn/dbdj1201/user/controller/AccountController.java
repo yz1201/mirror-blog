@@ -35,12 +35,12 @@ public class AccountController {
 
     @CrossOrigin
     @PostMapping("/login")
-    public CommonResult login(@Validated @RequestBody LoginDto loginDto, HttpServletResponse response) {
+    public CommonResult<Object> login(@Validated @RequestBody LoginDto loginDto, HttpServletResponse response) {
         User loginUser = userService.getOne(new QueryWrapper<User>().eq("username", loginDto.getUsername()));
         Assert.notNull(loginUser, "用户不存在");
 
         if (!loginUser.getPassword().equals(SecureUtil.md5(loginDto.getPassword()))) {
-            return new CommonResult<>("密码错误");
+            return new CommonResult<>(444, "密码错误", null);
         }
 
         log.info("someone is login - {}", loginDto);
@@ -48,12 +48,13 @@ public class AccountController {
         response.setHeader("Authorization", jwt);
         response.setHeader("Access-control-Expose-Headers", "Authorization");
 
-        return new CommonResult(MapUtil.builder()
-                .put("id", loginUser.getId())
-                .put("username", loginUser.getUsername())
-                .put("avatar", loginUser.getAvatar())
-                .put("email", loginUser.getEmail())
-                .map()
+        return new CommonResult<>(200, "登录成功<(￣︶￣)↗[GO!]",
+                MapUtil.builder()
+                        .put("id", loginUser.getId())
+                        .put("username", loginUser.getUsername())
+                        .put("avatar", loginUser.getAvatar())
+                        .put("email", loginUser.getEmail())
+                        .map()
         );
 
     }
@@ -62,7 +63,7 @@ public class AccountController {
     @GetMapping("/logout")
     public CommonResult<User> logout() {
         SecurityUtils.getSubject().logout();
-        return new CommonResult<>(null);
+        return new CommonResult<>(200,"走咯O(∩_∩)O",null);
     }
 
 }

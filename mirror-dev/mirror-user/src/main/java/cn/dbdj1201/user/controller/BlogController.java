@@ -33,20 +33,20 @@ public class BlogController {
     private BlogService blogService;
 
     @GetMapping("/blogs")
-    public CommonResult blogs(Integer currentPage) {
+    public CommonResult<IPage<Blog>> blogs(Integer currentPage) {
         if (currentPage == null || currentPage < 1) {
             currentPage = 1;
         }
         Page<Blog> page = new Page<>(currentPage, 5);
         IPage<Blog> blogIPage = blogService.page(page, new QueryWrapper<Blog>().orderByDesc("created"));
-        return new CommonResult(200,"查询成功，(●ˇ∀ˇ●)",blogIPage);
+        return new CommonResult<>(200, "查询成功，(●ˇ∀ˇ●)", blogIPage);
     }
 
     @GetMapping("/blog/{id}")
     public CommonResult<Blog> blog(@PathVariable Long id) {
         Blog blog = blogService.getById(id);
         Assert.notNull(blog, "该博客已被删除，/(ㄒoㄒ)/~~");
-        return new CommonResult<>(blog);
+        return new CommonResult<>(200, "定位成功", blog);
     }
 
     @RequiresAuthentication
@@ -66,7 +66,7 @@ public class BlogController {
         //后边是要忽略的字段
         BeanUtil.copyProperties(blog, temp, "id", "userId", "created", "status");
         blogService.save(temp);
-        return new CommonResult<>("操作成功");
+        return new CommonResult<>(200, "编辑成功", blog);
     }
 
 
