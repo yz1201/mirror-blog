@@ -47,6 +47,7 @@
       }
     },
     created() {
+      console.log(this.$store.getters.getUser);
       if(this.$store.getters.getUser.username) {
         this.user.username = this.$store.getters.getUser.username
         this.user.avatar = this.$store.getters.getUser.avatar
