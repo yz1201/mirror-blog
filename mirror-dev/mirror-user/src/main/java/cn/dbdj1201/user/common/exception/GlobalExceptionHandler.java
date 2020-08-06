@@ -24,7 +24,8 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ShiroException.class)
     public CommonResult<Object> handle401(ShiroException e) {
-        return new CommonResult<>(401, e.getMessage());
+        e.printStackTrace();
+        return new CommonResult<>(200, "zhen mei shi", null);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -4,18 +4,26 @@ package cn.dbdj1201.user.controller;
 import cn.dbdj1201.user.entity.Blog;
 import cn.dbdj1201.user.entity.CommonResult;
 import cn.dbdj1201.user.service.BlogService;
+import cn.dbdj1201.user.shiro.AccountProfile;
 import cn.dbdj1201.user.util.ShiroUtil;
+import cn.dbdj1201.user.util.SpringBeanFactoryUtils;
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.Assert;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 /**
@@ -31,6 +39,9 @@ import java.time.LocalDateTime;
 public class BlogController {
     @Autowired
     private BlogService blogService;
+
+    @Autowired
+    private SpringBeanFactoryUtils springBeanFactoryUtils;
 
     @GetMapping("/blogs")
     public CommonResult<IPage<Blog>> blogs(Integer currentPage) {
@@ -50,9 +61,11 @@ public class BlogController {
         return new CommonResult<>(200, "定位成功", blog);
     }
 
-    //    @RequiresAuthentication
+    @RequiresAuthentication
     @PostMapping("/blog/edit")
-    public CommonResult<Object> edit(@Validated @RequestBody Blog blog) {
+    public CommonResult<Object> edit(@Validated @RequestBody Blog blog, HttpServletResponse response) {
+
+
         log.info("new blog content: {}", blog);
         Blog temp;
         if (blog.getId() != null) {
