@@ -44,19 +44,22 @@ public class BlogController {
 
     @GetMapping("/blog/{id}")
     public CommonResult<Blog> blog(@PathVariable Long id) {
+        log.info("call me for what");
         Blog blog = blogService.getById(id);
         Assert.notNull(blog, "该博客已被删除，/(ㄒoㄒ)/~~");
         return new CommonResult<>(200, "定位成功", blog);
     }
 
-    @RequiresAuthentication
+    //    @RequiresAuthentication
     @PostMapping("/blog/edit")
     public CommonResult<Object> edit(@Validated @RequestBody Blog blog) {
         log.info("new blog content: {}", blog);
         Blog temp;
         if (blog.getId() != null) {
             temp = blogService.getById(blog.getId());
-            Assert.isTrue(temp.getUserId().equals(ShiroUtil.getProfile().getId()), "没有编辑权限，Σ(っ °Д °;)っ");
+            //断言，登录对象必须持有编辑此博客的权限，否则无法编辑
+            log.info("crazy -> {}", ShiroUtil.getProfile());
+            Assert.isTrue(temp.getUserId().longValue() == ShiroUtil.getProfile().getId().longValue(), "没有编辑权限，Σ(っ °Д °;)っ");
         } else {
             temp = new Blog();
             temp.setUserId(ShiroUtil.getProfile().getId());
@@ -68,6 +71,14 @@ public class BlogController {
         blogService.save(temp);
         return new CommonResult<>(200, "编辑成功", blog);
     }
+
+//    @PostMapping("/blog/add")
+//    public CommonResult<Object> add(){
+//        log.info("someone wanna add blog");
+//
+//
+//        return new CommonResult<>(200,"有权限新增",null);
+//    }
 
 
 }

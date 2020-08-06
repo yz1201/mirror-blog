@@ -5,6 +5,7 @@ import cn.dbdj1201.user.entity.CommonResult;
 import cn.dbdj1201.user.entity.User;
 import cn.dbdj1201.user.service.UserService;
 import cn.dbdj1201.user.util.JwtUtils;
+import cn.dbdj1201.user.util.ShiroUtil;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -48,6 +49,8 @@ public class AccountController {
         response.setHeader("Authorization", jwt);
         response.setHeader("Access-control-Expose-Headers", "Authorization");
 
+//        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
+
         return new CommonResult<>(200, "登录成功<(￣︶￣)↗[GO!]",
                 MapUtil.builder()
                         .put("id", loginUser.getId())
@@ -62,8 +65,9 @@ public class AccountController {
     @RequiresAuthentication
     @GetMapping("/logout")
     public CommonResult<User> logout() {
+//        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
         SecurityUtils.getSubject().logout();
-        return new CommonResult<>(200,"走咯O(∩_∩)O",null);
+        return new CommonResult<>(200, "走咯O(∩_∩)O", null);
     }
 
 }

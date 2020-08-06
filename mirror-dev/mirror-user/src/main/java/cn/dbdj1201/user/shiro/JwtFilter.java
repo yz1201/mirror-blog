@@ -54,11 +54,13 @@ public class JwtFilter extends AuthenticatingFilter {
     @Override
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
         String jwt = ((HttpServletRequest) servletRequest).getHeader("Authorization");
+
+        //return true父类亲自处理，否则自己处理
         if (StrUtil.isEmpty(jwt)) {
             return true;
         } else {
-            Claims claim = jwtUtils.getClaimByToken(jwt);
-            if (claim == null || jwtUtils.isTokenExpired(claim.getExpiration())) {
+            Claims claims = jwtUtils.getClaimByToken(jwt);
+            if (claims == null || jwtUtils.isTokenExpired(claims.getExpiration())) {
                 throw new ExpiredCredentialsException("token失效了，请重新登录<(￣︶￣)↗[GO!]");
             }
             return executeLogin(servletRequest, servletResponse);
@@ -80,6 +82,13 @@ public class JwtFilter extends AuthenticatingFilter {
         return false;
     }
 
+    /**
+     * 跨域请求的处理通过
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     @Override
     protected boolean preHandle(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
@@ -92,7 +101,6 @@ public class JwtFilter extends AuthenticatingFilter {
             httpServletResponse.setStatus(org.springframework.http.HttpStatus.OK.value());
             return false;
         }
-
         return super.preHandle(request, response);
     }
 }

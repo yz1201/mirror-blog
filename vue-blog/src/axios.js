@@ -6,6 +6,8 @@ import store from './store'
 
 axios.defaults.baseURL = "http://localhost:40923"
 
+// axios.defaults.withCredentials = true
+
 // 前置拦截
 axios.interceptors.request.use(config => {
   return config
@@ -33,6 +35,7 @@ axios.interceptors.response.use(response => {
     }
 
     if(error.response.status === 401) {
+      // console.log("401 data"+$.store.get)
       store.commit("REMOVE_INFO")
       router.push("/login")
     }

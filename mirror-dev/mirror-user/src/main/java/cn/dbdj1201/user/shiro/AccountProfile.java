@@ -2,12 +2,14 @@ package cn.dbdj1201.user.shiro;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @Author: dbdj1201
  * @Date: 2020-08-04 9:34
  */
 @Data
-public class AccountProfile {
+public class AccountProfile implements Serializable {
     //登录成功后返回给用户的信息
     private Long id;
     //用户名
