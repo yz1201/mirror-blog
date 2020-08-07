@@ -1,0 +1,29 @@
+server:
+  port: 40924
+
+spring:
+  application:
+    name: service-shiro-demo
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///db_blog?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    # DataSource Config
+shiro:
+  loginUrl: /login
+  successUrl: /
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/UserMapper.xml
+
+
+
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: root
+#    url: jdbc:mysql:///db_mirror?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT&allowPublicKeyRetrieval=true
+
