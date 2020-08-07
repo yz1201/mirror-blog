@@ -3,6 +3,7 @@ package cn.dbdj1201.user.shiro;
 import cn.dbdj1201.user.entity.User;
 import cn.dbdj1201.user.service.UserService;
 import cn.dbdj1201.user.util.JwtUtils;
+import cn.dbdj1201.user.util.SpringBeanFactoryUtils;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.*;
@@ -58,6 +59,8 @@ public class AccountRealm extends AuthorizingRealm {
         log.info("jwt -------------------------> {}", token);
         //对token进行解析，对user信息进行校验
         String userId = jwtUtils.getClaimByToken(token.getPrincipal().toString()).getSubject();
+
+//        Object bean = SpringBeanFactoryUtils.getBean(UserService.class);
         User user = userService.getById(Long.parseLong(userId));
         if (user == null) {
             throw new UnknownAccountException("账户不存在");

@@ -3,6 +3,7 @@ package cn.dbdj1201.user.common.exception;
 import cn.dbdj1201.user.entity.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
+import org.apache.shiro.authz.UnauthenticatedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,9 +25,16 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ShiroException.class)
     public CommonResult<Object> handle401(ShiroException e) {
-        e.printStackTrace();
-        return new CommonResult<>(200, "zhen mei shi", null);
+//        e.printStackTrace();
+        log.error(e.getMessage());
+        return new CommonResult<>(401, "The current Subject is not authenticated.  Access denied",null);
     }
+
+
+//    public CommonResult<Object> specHandler401(UnauthenticatedException e){
+//
+//
+//    }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
@@ -51,7 +59,7 @@ public class GlobalExceptionHandler {
 //        System.out.println(e.printStackTrace());
         e.printStackTrace();
         log.error("运行时异常：----------------{}", e.getMessage());
-        return new CommonResult<>(e.getMessage());
+        return new CommonResult<>(444,"出问题了",e.getMessage());
     }
 
 }

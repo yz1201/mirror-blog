@@ -9,6 +9,8 @@ import io.jsonwebtoken.Claims;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.ExpiredCredentialsException;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ThreadContext;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,43 @@ public class JwtFilter extends AuthenticatingFilter {
 
     @Autowired
     private JwtUtils jwtUtils;
+
+
+    /**
+     * 判断是否允许通过
+     *
+     * @param request
+     * @param response
+     * @param mappedValue
+     * @return
+     */
+    @Override
+    protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
+        System.out.println("isAccessAllowed方法");
+        try {
+            return executeLogin(request, response);
+        } catch (Exception e) {
+//            System.out.println("错误" + e);
+            return false;
+        }
+    }
+
+//    /**
+//     * 是否进行登录请求
+//     * @param request
+//     * @param response
+//     * @return
+//     */
+//    @Override
+//    protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
+//        System.out.println("isLoginAttempt方法");
+//        String token=((HttpServletRequest)request).getHeader("token");
+//        if (token!=null){
+//            return true;
+//        }
+//        return false;
+//    }
+
 
     @Override
     protected AuthenticationToken createToken(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
@@ -82,8 +121,15 @@ public class JwtFilter extends AuthenticatingFilter {
         return false;
     }
 
+//    @Override
+//    protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request, ServletResponse response) throws Exception {
+//        ThreadContext.bind(subject);
+//        return super.onLoginSuccess(token, subject, request, response);
+//    }
+
     /**
      * 跨域请求的处理通过
+     *
      * @param request
      * @param response
      * @return

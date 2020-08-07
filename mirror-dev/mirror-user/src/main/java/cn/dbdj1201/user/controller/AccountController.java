@@ -12,6 +12,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.validation.annotation.Validated;
@@ -35,7 +36,7 @@ public class AccountController {
     /*接受账号密码，然后把用户的id生成jwt，返回给前段，为了后续的jwt的延期，所以我们把jwt放在header上*/
 
     @CrossOrigin
-    @PostMapping("/login")
+    @PostMapping(value = "/login", produces = "application/json;charset=UTF-8")
     public CommonResult<Object> login(@Validated @RequestBody LoginDto loginDto, HttpServletResponse response) {
         User loginUser = userService.getOne(new QueryWrapper<User>().eq("username", loginDto.getUsername()));
         Assert.notNull(loginUser, "用户不存在");
@@ -44,12 +45,14 @@ public class AccountController {
             return new CommonResult<>(444, "密码错误", null);
         }
 
-        log.info("someone is login - {}", loginDto);
+//        log.info("someone is login - {}", loginDto);
         String jwt = jwtUtils.generateToken(loginUser.getId());
+        log.info("login jwt generate- {}", jwt);
         response.setHeader("Authorization", jwt);
         response.setHeader("Access-control-Expose-Headers", "Authorization");
 
 //        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
+
 
         return new CommonResult<>(200, "登录成功<(￣︶￣)↗[GO!]",
                 MapUtil.builder()
@@ -63,10 +66,16 @@ public class AccountController {
     }
 
     @RequiresAuthentication
-    @GetMapping("/logout")
+    @GetMapping(value = "/logout", produces = "application/json;charset=UTF-8")
     public CommonResult<User> logout() {
 //        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
-        SecurityUtils.getSubject().logout();
+
+        Subject subject = SecurityUtils.getSubject();
+        log.info("logout subject-{}", subject.getPrincipal());
+
+        subject.logout();
+
+
         return new CommonResult<>(200, "走咯O(∩_∩)O", null);
     }
 

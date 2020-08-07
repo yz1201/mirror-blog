@@ -6,18 +6,18 @@ spring:
     name: service-user
   # thymeleaf
 
-  thymeleaf:
-    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
-    mode: HTML5
-    #编码 可不用配置
-    encoding: UTF-8
-    #内容类别,可不用配置
-    #开发配置为false,避免修改模板还要重启服务器
-    cache: false
-    #配置模板路径，默认是templates，可以不用配置
-    prefix: classpath:/templates/
-    servlet:
-      content-type: text/html
+#  thymeleaf:
+#    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+#    mode: HTML5
+#    #编码 可不用配置
+#    encoding: UTF-8
+#    #内容类别,可不用配置
+#    #开发配置为false,避免修改模板还要重启服务器
+#    cache: false
+#    #配置模板路径，默认是templates，可以不用配置
+#    prefix: classpath:/templates/
+#    servlet:
+#      content-type: text/html
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,6 +32,8 @@ shiro-redis:
   enabled: true
   redis-manager:
     host: 127.0.0.1:6379
+  cache-maneger:
+    expire: 1800
 dbdj1201:
   jwt:
     # 加密秘钥

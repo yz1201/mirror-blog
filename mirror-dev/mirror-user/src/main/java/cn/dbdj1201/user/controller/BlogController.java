@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.util.Assert;
@@ -63,9 +64,10 @@ public class BlogController {
 
     @RequiresAuthentication
     @PostMapping("/blog/edit")
-    public CommonResult<Object> edit(@Validated @RequestBody Blog blog, HttpServletResponse response) {
+    public CommonResult<Object> edit(@Validated @RequestBody Blog blog) {
 
-
+        Subject subject = SecurityUtils.getSubject();
+        log.info("blog edit subject-{}", subject);
         log.info("new blog content: {}", blog);
         Blog temp;
         if (blog.getId() != null) {
