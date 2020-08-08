@@ -1,10 +1,13 @@
 package cn.dbdj1201.shiro.controller;
 
 
+import cn.dbdj1201.shiro.entity.CommonResult;
 import cn.dbdj1201.shiro.entity.User;
 import cn.dbdj1201.shiro.service.UserService;
+import cn.hutool.core.text.Simhash;
 import cn.hutool.crypto.SecureUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,14 +41,18 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public Boolean register(@RequestBody User user) {
-        user.setPassword(SecureUtil.md5(user.getPassword()));
+    public CommonResult<User> register(@RequestBody User user) {
+        String password = user.getPassword();
+
+        Sha256Hash sha256Hash = new Sha256Hash(password, "dbdj1201&bjtamgc", 1024);
+        user.setPassword(sha256Hash.toHex());
         user.setAvatar("test.jpg");
         user.setCreated(LocalDateTime.now());
         user.setEmail("15957121194@163.com");
         user.setLastLogin(LocalDateTime.now());
         user.setStatus(0);
-        return this.userService.save(user);
+         this.userService.save(user);
+        return new CommonResult<>(200,"注册成功",user);
     }
 
     @GetMapping("/list")

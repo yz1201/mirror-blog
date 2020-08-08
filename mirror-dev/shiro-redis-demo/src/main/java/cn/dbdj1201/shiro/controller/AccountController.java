@@ -4,12 +4,16 @@ import cn.dbdj1201.shiro.entity.CommonResult;
 import cn.dbdj1201.shiro.entity.User;
 import cn.dbdj1201.shiro.entity.UserInfo;
 import cn.dbdj1201.shiro.service.UserService;
+import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +28,7 @@ public class AccountController {
     @Autowired
     private UserService userService;
 
+    @PostMapping("/login")
     public CommonResult<Object> login(@RequestBody UserInfo userInfo) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(userInfo.getUsername(),
@@ -34,7 +39,15 @@ public class AccountController {
                     new QueryWrapper<User>().eq("username", userInfo.getUsername())
             ));
         }
-        return new CommonResult<>(444,"none","┭┮﹏┭┮");
+        return new CommonResult<>(444, "none", "┭┮﹏┭┮");
     }
 
+    @RequiresAuthentication
+    @GetMapping("/logout")
+    public CommonResult<Object> logout() {
+
+        log.info("current subject-{}", SecurityUtils.getSubject().getPrincipal());
+
+        return new CommonResult<>(200, "成功登出(●ˇ∀ˇ●)", null);
+    }
 }

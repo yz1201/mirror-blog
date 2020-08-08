@@ -9,19 +9,18 @@ import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthenticatingRealm;
-import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Base64;
+
 
 /**
  * @author yz1201
  * @date 2020-08-07 23:06
  **/
-@Component
+//@Component
 public class UserRealm extends AuthenticatingRealm {
 
     private static final String SALT = "dbdj1201&bjtamgc";
@@ -42,7 +41,7 @@ public class UserRealm extends AuthenticatingRealm {
         }
 
         return new SimpleAuthenticationInfo(
-                user.getPassword(), ByteSource.Util.bytes(SALT), getName());
+                user, user.getPassword(), ByteSource.Util.bytes(SALT), getName());
     }
 
 //    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {

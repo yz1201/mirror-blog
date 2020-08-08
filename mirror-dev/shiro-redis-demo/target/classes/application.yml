@@ -11,6 +11,12 @@ spring:
     username: root
     password: root
     # DataSource Config
+  redis:
+    password: redis
+    url: localhost
+shiro:
+  loginUrl: /login
+  successUrl: /
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/UserMapper.xml
