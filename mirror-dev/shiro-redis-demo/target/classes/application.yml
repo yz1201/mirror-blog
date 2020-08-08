@@ -14,9 +14,10 @@ spring:
   redis:
     password: redis
     url: localhost
-shiro:
-  loginUrl: /login
-  successUrl: /
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/UserMapper.xml
