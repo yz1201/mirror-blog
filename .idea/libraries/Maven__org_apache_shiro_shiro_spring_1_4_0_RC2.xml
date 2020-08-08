@@ -1,0 +1,62 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.shiro:shiro-spring:1.4.0-RC2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../repo/repo_mine/org/apache/shiro/shiro-spring/1.4.0-RC2/shiro-spring-1.4.0-RC2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../repo/repo_mine/org/apache/shiro/shiro-spring/1.4.0-RC2/shiro-spring-1.4.0-RC2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/cache/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/config/core/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/config/ogdl/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/core/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/core/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/crypto/cipher/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/crypto/core/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/crypto/hash/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/event/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/integration-tests/guice3/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/integration-tests/guice3/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/integration-tests/guice4/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/integration-tests/guice4/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/integration-tests/support/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/lang/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/aspectj/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/aspectj/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/guice/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/guice/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/jaxrs/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/quickstart-guice/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/quickstart/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/servlet-plugin/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/spring-boot-web/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/spring-client/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/spring-hibernate/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/spring-hibernate/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/spring/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/samples/web/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/aspectj/src/main/aspect" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/aspectj/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/aspectj/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/cas/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/ehcache/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/ehcache/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/guice/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/guice/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/hazelcast/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/jaxrs/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/quartz/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/spring-boot/spring-boot-starter/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/spring-boot/spring-boot-starter/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/spring-boot/spring-boot-web-starter/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/spring-boot/spring-boot-web-starter/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/spring/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/support/spring/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/tools/hasher/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/web/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../dataGroup/baiduyun/currentToolsPackage/shiro-shiro-root-1.4.0-RC2-release-vote1.zip!/shiro-shiro-root-1.4.0-RC2-release-vote1/web/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../../repo/repo_mine/org/apache/shiro/shiro-spring/1.4.0-RC2/shiro-spring-1.4.0-RC2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
