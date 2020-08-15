@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mirror-user" />
+        <module name="shiro-redis-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mirror-dev" target="11" />
       <module name="mirror-user" target="11" />
+      <module name="shiro-redis-demo" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

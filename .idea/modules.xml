@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mirror-dev/mirror-dev.iml" filepath="$PROJECT_DIR$/mirror-dev/mirror-dev.iml" />
       <module fileurl="file://$PROJECT_DIR$/mirror-dev/mirror-user/mirror-user.iml" filepath="$PROJECT_DIR$/mirror-dev/mirror-user/mirror-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mirror-dev/shiro-redis-demo/shiro-redis-demo.iml" filepath="$PROJECT_DIR$/mirror-dev/shiro-redis-demo/shiro-redis-demo.iml" />
     </modules>
   </component>
 </project>
