@@ -94,7 +94,6 @@ public class JwtFilter extends AuthenticatingFilter {
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
         String jwt = ((HttpServletRequest) servletRequest).getHeader("Authorization");
 
-        //return true父类亲自处理，否则自己处理
         if (StrUtil.isEmpty(jwt)) {
             return true;
         } else {

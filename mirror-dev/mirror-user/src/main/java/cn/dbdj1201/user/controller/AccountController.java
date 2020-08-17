@@ -51,7 +51,7 @@ public class AccountController {
         response.setHeader("Authorization", jwt);
         response.setHeader("Access-control-Expose-Headers", "Authorization");
 
-//        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
+        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
 
 
         return new CommonResult<>(200, "登录成功<(￣︶￣)↗[GO!]",
@@ -68,7 +68,6 @@ public class AccountController {
     @RequiresAuthentication
     @GetMapping(value = "/logout", produces = "application/json;charset=UTF-8")
     public CommonResult<User> logout() {
-//        log.info("shiro util profile -> {}", ShiroUtil.getProfile());
 
         Subject subject = SecurityUtils.getSubject();
         log.info("logout subject-{}", subject.getPrincipal());

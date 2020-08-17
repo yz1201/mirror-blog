@@ -37,22 +37,6 @@ public class MyShiroConfig {
     @Autowired
     JwtFilter jwtFilter;
 
-    // 开启注解代理（默认好像已经开启，可以不要）
-    @Bean
-    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
-        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
-        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
-        return authorizationAttributeSourceAdvisor;
-    }
-
-    @Bean
-    public static DefaultAdvisorAutoProxyCreator getDefaultAdvisorAutoProxyCreator() {
-        DefaultAdvisorAutoProxyCreator creator = new DefaultAdvisorAutoProxyCreator();
-        creator.setProxyTargetClass(true);
-        creator.setUsePrefix(true);
-        return creator;
-    }
-
     @Bean
     public SessionManager sessionManager(RedisSessionDAO redisSessionDAO) {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
@@ -99,6 +83,22 @@ public class MyShiroConfig {
         Map<String, String> filterMap = shiroFilterChainDefinition.getFilterChainMap();
         shiroFilter.setFilterChainDefinitionMap(filterMap);
         return shiroFilter;
+    }
+
+    // 开启注解代理（默认好像已经开启，可以不要）
+    @Bean
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
+        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
+        return authorizationAttributeSourceAdvisor;
+    }
+
+    @Bean
+    public static DefaultAdvisorAutoProxyCreator getDefaultAdvisorAutoProxyCreator() {
+        DefaultAdvisorAutoProxyCreator creator = new DefaultAdvisorAutoProxyCreator();
+        creator.setProxyTargetClass(true);
+        creator.setUsePrefix(true);
+        return creator;
     }
 
 }
